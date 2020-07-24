@@ -1,0 +1,633 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Resume</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5f7f9cac-b372-4b4d-851e-b24607313e59" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/met_arnold_bocklin_1880.jpg" style="object-position:center 100%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">📄</span></div><h1 class="page-title">Resume</h1></header><div class="page-body"><blockquote id="03ececb9-cb4e-472a-9fa5-74d9fd34861a" class="">I&#x27;m a <strong>Mechatronics Engineer </strong>from Mexico, based in Monterrey, Mexico <strong>willing to relocate</strong>. I&#x27;m legally allowed to work in the U.S.
+I&#x27;m specialized in design for Additive Manufacture, with experience with FDM, SLA and MJF technologies.</blockquote><p id="32fd81f8-0db7-464d-a7d3-2c28f44d1fdb" class="">
+</p><h3 id="25269218-879a-4452-9b30-47bf2a463d29" class="">Full PDF version</h3><figure id="0f462787-2318-4cc1-982c-5e3a2ecd0c37"><div class="source"><a></a></div></figure><h1 id="e6f54e02-0f7d-4a99-93c2-3f9a0e065da1" class="">📚 Education</h1><h3 id="ed72d66d-644b-423b-b5d5-4f18ce6076a7" class="">B.S. in Mechatronics Engineering</h3><p id="dc5d3677-ecef-41ad-b614-d849c01e9e3a" class=""><strong>Tecnológico de Monterrey </strong><em>Monterrey, Mexico</em><strong> — </strong>(August 2015 - June 2020)</p><ul id="616a9cb4-99f6-4bbf-a853-b39ff5a70e92" class="bulleted-list"><li>GPA 85/100</li></ul><h1 id="90319e7c-0e56-425a-b1e5-8a7929fc0a22" class="">👨🏻‍💻Professional Experience</h1><h3 id="91c3472e-e1e1-43c5-8fb3-e18fe0bd0a6f" class="">Co-founder</h3><p id="92b23a57-8451-4900-aa23-02049b51e882" class=""><strong><a href="https://www.prothesia.com/">Prothesia</a></strong><strong> </strong><em>Monterrey, Mexico </em><strong><em>—</em></strong><em> (August 2017 - August 2020)</em></p><ul id="05e30556-a502-4663-aee5-baa8910d22cc" class="bulleted-list"><li>Prothesia is a startup developing a digital platform that enable clinicians to design and manufacture orthoses and prostheses using 3D Scanning, 3D Modeling and 3D Printing.</li></ul><h3 id="9847ac56-9428-4678-a972-505f2e643424" class="">Design Engineer</h3><p id="73785d61-4483-49cf-a849-97f5c39e6330" class=""><a href="https://www.facebook.com/BajaSaeMoreliaITESM"><strong>Volta Racing Team</strong></a><strong> </strong><em>Morelia, Mexico </em><strong><em>— </em></strong><em>(January 2018 - December 2018)</em></p><ul id="77e52a80-437b-4b3a-b1cc-79bc46b292e1" class="bulleted-list"><li>Designed the frame of Baja SAE vehicle in Solidworks.</li></ul><ul id="c7e680ca-fc89-481b-b243-cecbe62cb780" class="bulleted-list"><li>Painting and Assembly of the chassis.</li></ul><h1 id="671f1d7a-4c6a-4a0c-ae8c-0a57aa64e23a" class="">✏️ Volunteer Experience</h1><h3 id="8ec1500b-20db-4a22-9fce-f9852c839ce8" class="">Volunteer Teacher</h3><p id="48b5450b-b189-46c0-89ab-d3df885c064f" class=""><strong>UVEA </strong><em>Online </em><em><strong><em>— </em></strong></em><em><em><em>(August 2016 - May 2017)</em></em></em></p><ul id="e33c0eb9-8b0d-4c3f-9ef0-04c37de6c036" class="bulleted-list"><li>Organized Math and Spanish lessons for Latin-American immigrants in New York via Skype in collaboration with UVEA, an organization that helps adult immigrants to get their GED.</li></ul><h1 id="6579f07f-b268-4d4a-b4a6-dcb6638074b0" class="">🗣 Languages</h1><div id="59a24c96-b4f1-4d11-b46d-effe2dbc74d3" class="column-list"><div id="3da452e3-d21f-440a-8eb9-4c2900e89d08" style="width:50%" class="column"><h3 id="2077600a-8177-41d4-84f6-f81f033673b7" class="">Spanish 🇲🇽</h3><p id="2e6f383d-0f93-4276-9288-a2155b466b84" class="">Native speaker</p></div><div id="cbbab56a-f915-4027-af74-a18a3c09766a" style="width:50%" class="column"><h3 id="b2f187e7-8514-44ec-8707-bc37847e1b78" class="">English 🇺🇸</h3><p id="0f1ba979-8a8a-4d98-b390-115065489aba" class="">Advanced</p></div></div><h3 id="aed4c5d4-0469-4282-b6d2-52e087a53498" class="">German 🇩🇪</h3><p id="b9b40b9e-152c-4411-acbf-e5fe1a076eed" class="">Basic (<strong>A1</strong>)</p><h1 id="466c5620-6d46-4cf0-b7a6-f3c5cf098ce5" class="">⚒️ Skills</h1><div id="1818264b-2d0e-4be8-bdaf-26a30b07df74" class="column-list"><div id="05a124b7-cba3-45cd-9e90-0af1367f913b" style="width:50%" class="column"><ul id="54c2ea22-89ad-4678-8c2c-bd0eb04754ad" class="bulleted-list"><li>Python</li></ul><ul id="16478150-209b-4bcb-9daf-139066090445" class="bulleted-list"><li>MATLAB</li></ul><ul id="9d1248a5-64bc-4b50-8751-866d916263aa" class="bulleted-list"><li>PLC (Siemens)</li></ul><ul id="87cb6b62-6691-4cf9-afe2-9958c91e49e7" class="bulleted-list"><li>Arduino</li></ul><ul id="0bc8545d-2768-4471-9fa2-87cede327a12" class="bulleted-list"><li>Raspberry Pi</li></ul><ul id="fe8048a0-7bf6-418b-b4cf-ac121553048f" class="bulleted-list"><li>Laser cutting</li></ul><p id="1e692bcf-5665-4eda-b50f-c5b7952a1481" class="">
+</p><p id="262e8659-a391-4a72-bc20-e6bc8976d840" class="">
+</p></div><div id="88a11601-245c-4ca0-85a5-b7a41f10b9b6" style="width:50%" class="column"><ul id="8a348c5f-eef3-4b67-a0ec-2d6d6b907c73" class="bulleted-list"><li>CNC</li></ul><ul id="93a233df-4b01-4dee-86b2-fc2635c71afc" class="bulleted-list"><li>Solidworks (CSWA)</li></ul><ul id="cfcb5fe7-5190-4cb4-b49f-78fac6cc425f" class="bulleted-list"><li>Fusion 360</li></ul><ul id="4ec9f160-55f1-40fe-9a4e-fbad82ea602b" class="bulleted-list"><li>Meshmixer</li></ul><ul id="9e4b702e-f76a-4df2-b022-6730a879a624" class="bulleted-list"><li>3D Printing (FDM, SLA, MJF)</li></ul><ul id="62b60fb0-30cd-4660-9078-0fc5cee8a31e" class="bulleted-list"><li>Lathe</li></ul></div></div><p id="0fc95aee-af1b-43a6-9987-f24212b9c6f2" class="">
+</p><p id="3f5a5faa-6dd8-4959-959c-7ae73827b29f" class="">
+</p></div></article></body></html>
